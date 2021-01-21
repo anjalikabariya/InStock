@@ -1,0 +1,83 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports.scss";
+
+.modal{
+    background-color:white;
+    //the modal will take up the entire screen for mobile devices
+    width:100%;
+    height:100vh;
+    padding:16px 0 24px 0;
+   
+    @include tablet{
+        //the modal will be a set size for devices >=tablet
+        width:672px;
+        height:262px;
+        margin-top:190px;
+    }
+
+    &__container{
+        //remove the container from the HTML flow and place it on top of the page calling it
+        position:absolute;
+        z-index:1;
+        //container always takes up the entire screen and covers the underlying page with a transparent grey filter
+        background: rgba(19, 24, 44, 0.7);
+        width:100vw;
+        height:100vh;
+        top:0;
+        left:0;
+        //center any items within the modal container on horizontally
+        display:flex;
+        justify-content:center;
+    }
+
+    &__close{
+        margin-left:auto;
+
+        &-wrapper{
+            display:flex;
+            justify-content: flex-end;
+            margin-right:21px;
+        }
+    }
+
+    &__main{
+        display:flex;
+        height:100%;
+        flex-direction:column;
+        justify-content:space-between;
+        padding:16px;
+
+        @include tablet{
+            padding-left:64px;
+            padding-right:64px;
+        }
+    }
+
+    &__title{
+        margin-bottom:24px;
+    }
+
+    &__bottom{
+        display:flex;
+        
+        @include tablet{
+            align-self:flex-end;
+            margin-bottom:22px;
+        }
+        
+    }
+    &__cancel{
+        @include buildButton($global-white,$global-white);
+        color: $column-header-text;
+        border: $sorting-icon 1px solid;
+        margin-right:16px;
+        &:hover{
+            color:$input-active;
+            border:1px solid $input-active;
+        }
+    }
+    &__delete{
+        @include buildButton($delete-button,$cta-hover-fill);
+    }
+
+}

@@ -1,0 +1,70 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+li{
+    list-style-type: none;
+    
+}
+
+.nav{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    background-color: $header-background;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+        height: 186px;
+        padding-top: 16px;
+    }
+
+    &--logo{
+        width: 100%;
+        text-align: center;
+        padding-top: 12px;
+        @include tablet{
+            padding: 16px;
+            width: auto;
+        }
+    }
+    &--menu{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+    &--link{
+        &-warehouse{
+            color: $outlines;     
+            height: 30px;
+            width: 50%;
+            padding: 8px 50px;
+            &:hover{
+                border-bottom: solid $global-white 2px;
+            }
+            &-active{
+                padding: 8px 50px;
+                background: $global-text;
+                border-radius: 20px;
+                color: $global-white;
+                width: 50%;
+                height: 36px;
+                &:hover{
+                    border-bottom: none;
+                }
+            }
+        }
+        &-inventory{
+            @extend .nav--link-warehouse;
+            &-active{
+                @extend .nav--link-warehouse-active
+            }
+        }
+    }
+}
+navbar{
+    color: $global-white;
+}

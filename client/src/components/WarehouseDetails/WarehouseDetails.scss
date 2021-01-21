@@ -1,0 +1,44 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+.warehouse-details{
+    padding:16px 0;
+    
+    border-bottom: 1px solid $dividers;
+    @include tablet{
+        display:flex;
+        justify-content:space-between;
+    }
+    &__left{
+        margin-left:4vw;
+        margin-bottom:16px;
+        @include tablet{
+            margin-bottom:0;
+         }
+    }
+    &__right{
+        margin:0 4vw;
+        display:flex;
+        // justify-content:space-between;
+        @include tablet{
+             border-left:1px solid $dividers;
+             width:54%;
+        }
+    }
+    &__label{
+        font-weight:600;
+        color:$column-header-text;
+        margin-bottom:4px;
+    }
+
+    &__contact{
+        @include tablet{
+            margin:0 $tablet-gutters;
+        }
+        &--left{
+            margin-right:$card-margin-mobile;
+        }
+
+    }
+}
+

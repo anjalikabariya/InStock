@@ -1,0 +1,82 @@
+@import "../../styles/globalImports";
+
+.item-details{
+    padding:16px 0;
+    margin:0 $card-margin-mobile;
+    @include tablet{
+        display:flex;
+        justify-content:space-between;
+        margin:0 $card-margin-tablet;
+    }
+    &__top{
+        margin-bottom:16px;
+        @include tablet{
+            padding: 16px;
+            width: 50%;
+            margin-bottom:0;
+        }
+    }
+    &__middle{
+        display:flex;
+        justify-content:flex-start;
+        margin-bottom: 16px;
+        @include tablet{
+             width:50%;
+        }
+    }
+
+    &__bottom{
+
+        @include tablet{
+            margin-left:$tablet-gutters;
+            margin-right: $tablet-gutters;
+        }
+    }
+
+    &__label{
+        font-weight:600;
+        color:$column-header-text;
+        margin-bottom:4px;
+    }
+
+    &__status{
+        @include tablet{
+            margin-left:$tablet-gutters;
+            margin-right: $tablet-gutters;
+        }
+
+    }
+
+    &__description {
+        margin-bottom: 16px;
+    }
+    
+    &--instock {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding-left: 8px;
+        background: rgba(21, 132, 99, 0.07);
+        color: #158463;
+        width: 71px;
+        @include tablet {
+          min-width: 65px;
+          max-width: 120px;
+        }
+      }
+      &--outofstock {
+        color: $outstock-label;
+        @extend .item-details--instock;
+        background: rgba(201, 69, 21, 0.07);
+        width: 97px;
+      }
+
+}
+.flex-container{
+    @include tablet{
+        width: 50%;
+        padding: 16px;
+        border-left:1px solid $dividers;
+    }
+}
+

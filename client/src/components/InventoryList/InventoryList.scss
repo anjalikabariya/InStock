@@ -1,0 +1,115 @@
+@import "../../styles/globalImports.scss";
+
+.table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &--header {
+    padding: 16px;
+    display: none;
+    border-bottom: 1px solid $borders;
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      background-color: $column-header-fill;
+      padding: 16px 0 16px $card-margin-tablet;
+    }
+    //header for inventory page
+    &-inventory{
+      background-color: $column-header-fill;
+      border-bottom: 1px solid $borders;
+      padding: $card-margin-mobile;
+      margin: 0;
+      display: none;
+      @include tablet {
+        display: flex;
+        padding: 24px $card-margin-tablet;
+        flex-direction: row;
+      }
+    }
+    &-labels {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 19px;
+      height: 180px;
+      @include tablet {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0;
+        height: fit-content;
+       }
+      &-actions-inventory{
+        @include tablet {
+          position: relative;
+          left:12%;
+          margin-right: $card-margin-mobile;
+        }
+      }
+      &-inventory{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        grid-row: auto auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 5px;
+        width: 100%;
+
+        @include tablet {
+          grid-template-columns: 0;
+          grid-row: 0;
+          grid-column-gap: 0;
+          grid-row-gap: 0;
+          display: flex;
+          flex-direction: row;
+          margin: 0;
+          height: fit-content;
+          width: 82%;
+        }
+      }
+    }
+    &-label {
+      width: 120px;
+      font-weight: 600;
+      color: $column-header-text;
+      display: flex;
+      height: fit-content;
+      align-items: center;
+
+      @include tablet {
+        margin-right: $card-margin-tablet;
+      }
+    
+      &-action {
+        @include tablet {
+          position: relative;
+          right: 45px;
+          margin-right: $card-margin-mobile;
+        }
+      }
+    }
+  }
+  &-labels {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 19px;
+    height: 180px;
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin: 0;
+      justify-content: space-around;
+      height: fit-content;
+    }
+  }
+  &-label {
+    width: 20%;
+    font-weight: 600;
+    color: $column-header-text;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+  }
+}

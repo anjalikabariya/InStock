@@ -1,0 +1,22 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+.card {
+  // absolute positioning may be needed to make it sit on top of header
+  padding-top: 24px; ////Patti
+  margin: 0 $card-margin-mobile;
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  position: relative;
+  top: 120px;
+
+  @include tablet {
+    margin: 0 $card-margin-tablet;
+    top: 97px;
+  }
+
+  @include desktop {
+    margin: 0 130px;
+  }
+}

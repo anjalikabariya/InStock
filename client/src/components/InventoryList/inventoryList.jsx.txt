@@ -1,0 +1,31 @@
+@@ -0,0 +1,30 @@
+// import any necessary modules
+import React from 'react';
+import InventoryItem from '../InventoryItem/InventoryItem';
+import './InventoryList.scss';
+
+function InventoryList({inventoryList}) {
+     
+    return (
+        <section className="table">
+                <thead className="table--header">
+                    <div className="table--header-labels">
+                        <h4 className="table--header-label">INVENTORY ITEM <img src="/assets/icons/sort-24px.svg" alt="sort-icon" className="table--header-icon" /></h4>
+                        <h4 className="table--header-label">CATEGORY<img src="/assets/icons/sort-24px.svg" alt="sort-icon" className="table--header-icon" /></h4>
+                        <h4 className="table--header-label">STATUS<img src="/assets/icons/sort-24px.svg" alt="sort-icon" className="table--header-icon" /></h4>
+                        <h4 className="table--header-label">QUANTITY<img src="/assets/icons/sort-24px.svg" alt="sort-icon" className="table--header-icon" /></h4>
+                        <h4 className="table--header-label">WAREHOUSE<img src="/assets/icons/sort-24px.svg" alt="sort-icon" className="table--header-icon" /></h4>
+                    </div>
+                    <h4 className="table--header-label-action">ACTIONS</h4>
+                </thead>
+                <tbody>
+                {inventoryList.map((data) => (
+                  <InventoryItem key={data.id} item={data} />
+                ))}
+                </tbody>
+              
+        </section>             
+    )
+}
+
+export default InventoryList;

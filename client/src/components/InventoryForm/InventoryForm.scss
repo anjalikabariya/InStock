@@ -1,0 +1,159 @@
+@import "../../styles/globalImports.scss";
+
+.form {
+  background-color: $global-white;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+
+  &___details-contact-container {
+    @include tablet {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 0 16px 24px 16px;
+    }
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid $borders;
+  }
+
+  &__details {
+    border-bottom: 1px solid $borders;
+
+    @include tablet {
+      border-bottom: none;
+      border-right: 1px solid $borders;
+      width: 100%;
+    }
+
+    &-head {
+      margin-left: 24px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin: 24px;
+
+      &-label {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      &-input {
+        color: $placeholder-text;
+        border-radius: 20px;
+        padding: 8px;
+        border: $borders solid 1px;
+        &:focus {
+          outline: none;
+          border: $input-active solid 2px;
+        }
+      }
+
+      &-status {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include tablet {
+          width: 80%;
+        }
+        @include desktop {
+          width: 50%;
+        }
+      }
+
+      &-desc {
+        @extend .form__details-item-input;
+        height: 120px;
+      }
+
+      &-quantity {
+        @extend .form__details-item-input;
+        width: 100%;
+        @include desktop {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  &__availability {
+    @extend .form__details;
+    border-right: none;
+    &-head {
+      @extend .form__details-head;
+    }
+    &-item {
+      @extend .form__details-item;
+      margin: 12px 24px;
+    }
+  }
+
+  &__button {
+    background-color: rgba(247, 248, 249, 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+
+    &-submit {
+      @include buildButton($cta-fill, $cta-hover-fill);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40vw;
+      margin: 16px 16px 16px 16px;
+
+      @include tablet {
+        width: fit-content;
+      }
+      &--cancel {
+        @include buildButton($global-white, $cta-hover-fill);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        color: $placeholder-text;
+        border: $sorting-icon 1px solid;
+        width: 40vw;
+        margin: 16px 0 16px 16px;
+
+        @include tablet {
+          width: fit-content;
+        }
+
+        &:hover {
+          background: $global-white;
+          color: $cta-fill;
+          border: $cta-fill 1px solid;
+        }
+      }
+    }
+  }
+}
+
+.quantity {
+  &--hide {
+    display: none;
+  }
+  &-display {
+    display: block;
+  }
+}

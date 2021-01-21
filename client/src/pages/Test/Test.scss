@@ -1,0 +1,10 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+.button{
+    @include buildButton($cta-fill, $cta-hover-fill);
+}
+
+.input{
+    @include buildInput(); 
+}

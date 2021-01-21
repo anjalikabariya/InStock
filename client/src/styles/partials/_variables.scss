@@ -1,0 +1,41 @@
+/*======================= Global Fonts & Backgrounds ======================= */
+
+$global-text: #13182c; //Instock-Black
+$global-white: #ffffff; //Global White
+
+$header-background: #232940; //graphite
+$page-background: #f7fbf9; //light-grey
+
+/*======================= Table/List Elements ======================= */
+
+$column-header-text: #5c6675; //Slate
+$column-header-fill: #f7fbf9; //light-grey
+$sorting-icon: #bdc5d5; //Cloud
+$dividers: #bdc5d5; //Cloud
+
+/*======================= Form Elements ======================= */
+$placeholder-text: #5c6675; //Slate
+$input-background: #ffffff; //light-grey
+$input-active: #2e66e5;
+
+//buttons
+$cta-fill: #2e66e5; //Instock-Indigo
+$cta-hover-fill: #232940; //graphite
+
+/*======================= Supporting Colors ======================= */
+$instock-label: #15b463;
+$outstock-label: #c94515;
+$error-state: #c94515;
+$delete-button: #c94515;
+
+$borders: #bdc5d5; //Cloud
+$outlines: #bdc5d5; //Cloud
+
+/*======================= Padding & Margins ======================= */
+$card-margin-mobile: 5vw; //16px
+$card-margin-tablet: 4vw; //32px
+$card-margin-desktop: auto;
+
+$mobile-gutters: 5vw; //16px @320vw
+$tablet-gutters: 3vw; //24px @768vw
+$desktop-gutters: 2vw; //24px @1280vw

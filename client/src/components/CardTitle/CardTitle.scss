@@ -1,0 +1,112 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+.card-title{
+    border-bottom:1px solid $borders;
+    padding-bottom:24px;
+
+    //display the left and right div in a row for devices >=tablet size
+    @include tablet{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    //used conditionally to place the edit buttons in a row with the titles
+    &--flexed{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+
+    // contains the title and the <- icon
+    &__left{
+        display:flex;
+        align-items:baseline;
+        padding-left:$card-margin-mobile;
+        @include tablet{
+            padding-left:$card-margin-tablet;
+        }
+        &-img{
+            margin-right:8px;
+            &:hover{
+                transform: translate(-4px);
+            }
+        }
+       
+    }
+
+    //contains the search input and the button
+    &__right{
+        padding:0 $card-margin-mobile;
+        @include tablet{
+            padding-left:$card-margin-tablet;
+        }
+        @include tablet{
+            display:flex;
+            align-items:center;
+        }
+    }
+
+    &__button{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        //build a button with the appropriate fill and hover fill and default styling
+        @include buildButton($cta-fill, $cta-hover-fill);
+
+        @include tablet{
+            margin-left:16px;
+        }
+        
+        //styling for the button if it has an image
+        &--img{
+            width:37px;
+            @include tablet{
+                width:10vw;
+                max-width:77px;
+            }
+        }
+
+        //styling for the icon used on the button
+        &-img{
+            margin-right:4px;
+        }
+
+        &-text{
+            //don't display the <p> button text for buttons with an image on mobile
+            display:none;
+            @include tablet{
+                // display the <p> tag for devices >=tablet size
+                display:inline-block;
+            }
+        }
+
+    }
+}
+
+.search__input{
+    //relative positioning for placement of search icon
+    position:relative;
+    &-text{
+        // create an input box with all the default styling
+        @include buildInput();
+        margin:16px 0;
+        @include tablet{
+            margin:0;
+        }
+    }
+    
+    &-icon{
+        position:absolute;
+        top:21px;
+        right:18px;        
+
+        @include tablet{
+            top:7px;
+            right:18px;
+        }
+    }
+}

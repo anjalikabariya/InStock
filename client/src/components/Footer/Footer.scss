@@ -1,0 +1,14 @@
+@import "../../styles/globalStyles.scss";
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px;
+  height: 30vh;
+
+  &__text {
+    color: $placeholder-text;
+    font-weight: 400;
+  }
+}

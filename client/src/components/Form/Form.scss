@@ -1,0 +1,162 @@
+@import "../../styles/globalImports.scss";
+
+.form {
+  margin-top: 24px;
+  background-color: $global-white;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+
+  &__error {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+
+    &-text {
+      color: $error-state;
+      font-size: 0.625rem;
+      margin-left: 4px;
+    }
+
+    &-img {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &___details-contact-container {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 16px 24px 16px;
+    }
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid $borders;
+  }
+
+  &__details {
+    border-bottom: 1px solid $borders;
+
+    @include tablet {
+      border-bottom: none;
+      border-right: 1px solid $borders;
+      width: 100%;
+    }
+
+    &-head {
+      margin-left: 24px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin: 24px;
+
+      &-label {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      &-input {
+        border-radius: 20px;
+        padding: 8px;
+        border: $borders solid 1px;
+        &:focus {
+          outline: none;
+          border: $input-active solid 2px;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      width: 100%;
+    }
+    &-head {
+      margin: 24px 0 0 24px;
+      font-size: 1.25rem;
+      font-weight: 600;
+
+      @include tablet {
+        margin: 0 0 0 24px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin: 24px;
+
+      &-label {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      &-input {
+        border-radius: 20px;
+        padding: 8px;
+        border: $borders solid 1px;
+        &:focus {
+          outline: none;
+          border: $input-active solid 2px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    background-color: rgba(247, 248, 249, 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+
+    &-submit {
+      @include buildButton($cta-fill, $cta-hover-fill);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40vw;
+      margin: 16px;
+
+      @include tablet {
+        width: fit-content;
+        margin: 16px $card-margin-tablet 16px 16px;
+      }
+      &--cancel {
+        @include buildButton($global-white, $global-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        color: $placeholder-text;
+        border: $sorting-icon 1px solid;
+        width: 40vw;
+        margin: 16px 0 16px 16px;
+
+        @include tablet {
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

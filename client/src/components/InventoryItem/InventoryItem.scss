@@ -1,0 +1,153 @@
+//import all the mixins, typography, variables
+@import "../../styles/globalImports";
+
+.inventory-details {
+  border-bottom: 1px solid $borders;
+  padding: $card-margin-mobile;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding: 24px $card-margin-tablet;
+    flex-direction: row;
+  }
+  &:hover {
+    background: rgba(46, 102, 230, 0.07);
+  }
+  &__icon {
+    padding-left: 11px;
+  }
+  &__label {
+    display: flex;
+    font-weight: 600;
+    color: $column-header-text;
+    margin-bottom: 4px;
+    @include tablet {
+      display: none;
+    }
+
+    &-container {
+      width: 100px;
+      text-align: left;
+      padding-bottom: 20px;
+      @include tablet {
+        margin-right: $card-margin-tablet;
+        padding-bottom: 0;
+      }
+    }
+  }
+  &__value {
+    width: 100%;
+    &-instock {
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 0 16px;
+      background: rgba(21, 132, 99, 0.07);
+      color: #158463;
+      width: auto;
+      @include tablet {
+        min-width: 65px;
+        max-width: 120px;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    font-weight: 600;
+    color: $column-header-text;
+    margin-bottom: 4px;
+    @include tablet {
+      display: none;
+    }
+    &-container {
+      width: 40%;
+      text-align: left;
+      padding-bottom: 20px;
+      @include tablet {
+        width: 120px;
+        padding-bottom: 0;
+      }
+    }
+  }
+  &__value {
+    width: 100%;
+    &-instock {
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      padding-left: 8px;
+      background: rgba(21, 132, 99, 0.07);
+      color: #158463;
+      width: 71px;
+      @include tablet {
+        min-width: 65px;
+        max-width: 120px;
+      }
+    }
+    &-outofstock {
+      color: $outstock-label;
+      @extend .inventory-details__value-instock;
+      background: rgba(201, 69, 21, 0.07);
+      width: 97px;
+    }
+    &-start {
+      padding: 0;
+      color: $cta-fill;
+      display: flex;
+      margin-left: 0;
+
+      @include tablet {
+        width: 40%;
+      }
+    }
+  }
+  &__item {
+    &-list {
+      display: grid;
+      grid-template-columns: 200px 200px;
+      grid-row: auto auto;
+      grid-column-gap: 20px;
+      grid-row-gap: 5px;
+      width: 100%;
+
+      @include tablet {
+        grid-template-columns: 0;
+        grid-row: 0;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        height: fit-content;
+        width: 82%;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+      margin-left: auto;
+      margin-right: $card-margin-tablet;
+    }
+
+    &-delete {
+      @include tablet {
+        margin-right: 16px;
+      }
+    }
+
+    &-edit {
+      @include tablet {
+        // MOVE PENCIL A LITTLE LOWER TO MATCH DELETE ICON
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}

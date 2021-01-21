@@ -1,0 +1,66 @@
+/*======================= Media Breakpoints ======================= */
+
+// Changes to tablet format >=768px
+@mixin tablet{
+    @media (min-width:768px){
+        @content;
+    }
+}
+
+// Changes to desktop format >=1280px
+@mixin desktop{
+    @media (min-width:1280px){
+        @content;
+    }
+}
+
+/**
+* Useage: creates a button with the global default styling and specified background color for the primary and hover states
+* @param $primary-fill - color for default state
+* @param $hover-fill - color for hover state
+*/
+@mixin buildButton($primary-fill,$hover-fill){
+    height:36px;
+    border-radius:20px;
+    border:none;
+    background-color:$primary-fill;
+    padding:0 16px;
+    color:white;
+    width:100%;
+
+    @include tablet{
+        height:38px;
+        // width:18vw;
+    }
+    &:hover{
+        background-color:$hover-fill;
+        color:white;
+    }
+    &:focus{
+        outline:none;
+    }
+}
+
+/**
+* Useage: creates an input text field with the global default styling
+*/
+@mixin buildInput(){
+    height:36px;
+    outline:none;
+    border:1px solid $outlines;
+    background-color:$input-background;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding:0 16px;
+    width:100%;
+    
+    @include tablet{
+        height:38px;
+        width:24vw;
+    }
+
+    &:focus{
+        outline:none;
+        border-color:$input-active;
+    }
+}
